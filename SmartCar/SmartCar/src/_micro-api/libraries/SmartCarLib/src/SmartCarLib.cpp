@@ -81,6 +81,7 @@ void SmartCar::handleCar(String data_b) {
 void SmartCar::doForward() {
 	doLeftForward();
 	doRightForward();
+
 	//Serial.println("C: Forward");
 }
 
