@@ -47,5 +47,6 @@ Usage is pretty straightforward, on you code simple do the following:
   In the above example the car will go forward for 2sec, stop by 1sec, and then repeat it.
   
   You can check an example of this library being use over bluetooth by a GUI aplication for Windows: https://github.com/snackk/Arduino_BSmartCar/blob/master/BSmartCar/BSmartCar/BSmartCar.ino
+  
 Written by Diogo Santos.
 
