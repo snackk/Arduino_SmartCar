@@ -1,13 +1,20 @@
 # Arduino_SmartCar
 4WD Smart Car library for the Arduino.
 
+
+This library allows an Arduino board to control a 4WD car with a L298N chipset connected to the motors. 
+
 To use, first download the library, you can find it here: https://www.dropbox.com/s/egcmf6bxqnzrnn1/SmartCarLib_1.0.0.zip?dl=0
 
 Next, you should install the library, you can either do it manually or automatically.
 
 Then restart the Arduino software if necessary, and SmartCarLib should be available under the libraries dropdown.
 
-Usage is pretty straightforward, on you code simple do the following:
+Usage is pretty straightforward, first you need to connect the motors to the L298N, like so:
+
+![alt tag](https://www.dropbox.com/s/ajhv19hcuea3n10/SmartCar_bb.png?dl=1)
+
+Based on this schematic, the code is:
 ```c
   #include <SmartCarLib.h>
     
@@ -34,7 +41,7 @@ Usage is pretty straightforward, on you code simple do the following:
       "B\n" - Move backward
       "L\n" - Move left
       "F\n" - Move right
-    To Stop simply send the same again
+    To Stop simply send the same value again.
     */
 	  smartcar.handleCar("F\n");
 	  delay(2000);
