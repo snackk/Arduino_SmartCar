@@ -27,9 +27,8 @@ SmartCar::SmartCar(int l_pin1, int l_pin2, int l_pwm_pin, int r_pin1, int r_pin2
 }
 
 void SmartCar::handleCar(String data_b) {
-	//Serial.println("B: " + data_b);
 
-	if (data_b.equals("F\n") || data_b.equals("F")) {
+	if (data_b.equals("F\n")) {
 		if (_state != forward) {
 			doForward();
 			_state = forward;
@@ -40,7 +39,7 @@ void SmartCar::handleCar(String data_b) {
 		}
 	}
 	else {
-		if (data_b.equals("B\n") || data_b.equals("B")) {
+		if (data_b.equals("B\n")) {
 			if (_state != reverse) {
 				doReverse();
 				_state = reverse;
@@ -51,7 +50,7 @@ void SmartCar::handleCar(String data_b) {
 			}
 		}
 		else {
-			if (data_b.equals("L\n") || data_b.equals("L")) {
+			if (data_b.equals("L\n")) {
 				if (_state != left) {
 					doLeftTurn();
 					_state = left;
@@ -62,7 +61,7 @@ void SmartCar::handleCar(String data_b) {
 				}
 			}
 			else {
-				if (data_b.equals("R\n") || data_b.equals("R")) {
+				if (data_b.equals("R\n")) {
 					if (_state != right) {
 						doRightTurn();
 						_state = right;
@@ -81,8 +80,6 @@ void SmartCar::handleCar(String data_b) {
 void SmartCar::doForward() {
 	doLeftForward();
 	doRightForward();
-
-	//Serial.println("C: Forward");
 }
 
 void SmartCar::doLeftForward() {
