@@ -24,9 +24,24 @@ SmartCar::SmartCar(int l_pin1, int l_pin2, int l_pwm_pin, int r_pin1, int r_pin2
 	pinMode(_r_pwm_pin, OUTPUT);
 
 	_state = stop;
+	Serial.begin(9600);
 }
 
 void SmartCar::handleCar(String data_b) {
+
+	if (data_b.charAt(0) == 'S') {
+		char sp[5], data[3];
+		strcpy(sp, data_b.c_str());
+		int speed;
+		for (int i = 0; i < 3; i++) {
+			int offset = 2 + i;
+			data[i] = sp[offset];
+		}
+		sscanf(data, "%d", &speed);
+		//_speed = speed;
+		Serial.println("speed: " + speed);
+
+	}
 
 	if (data_b.equals("F\n")) {
 		if (_state != forward) {
@@ -84,14 +99,14 @@ void SmartCar::doForward() {
 
 void SmartCar::doLeftForward() {
 	//Left Motors
-	analogWrite(_l_pwm_pin, 255);
+	analogWrite(_l_pwm_pin, _speed);
 	digitalWrite(_l_pin1, LOW);
 	digitalWrite(_l_pin2, HIGH);
 }
 
 void SmartCar::doRightForward() {
 	//Right Motors
-	analogWrite(_r_pwm_pin, 255);
+	analogWrite(_r_pwm_pin, _speed);
 	digitalWrite(_r_pin1, LOW);
 	digitalWrite(_r_pin2, HIGH);
 }
@@ -122,7 +137,6 @@ void SmartCar::doRightTurn() {
 void SmartCar::doStop() {
 	doStopLeft();
 	doStopRight();
-	//Serial.println("C: Stop");
 }
 
 void SmartCar::doStopLeft() {
@@ -141,17 +155,16 @@ void SmartCar::doStopRight() {
 void SmartCar::doReverse() {
 	doLeftReverse();
 	doRightReverse();
-	//Serial.println("C: Reverse");
 }
 
 void SmartCar::doLeftReverse() {
-	analogWrite(_l_pwm_pin, 255);
+	analogWrite(_l_pwm_pin, _speed);
 	digitalWrite(_l_pin1, HIGH);
 	digitalWrite(_l_pin2, LOW);
 }
 
 void SmartCar::doRightReverse() {
-	analogWrite(_r_pwm_pin, 255);
+	analogWrite(_r_pwm_pin, _speed);
 	digitalWrite(_r_pin1, HIGH);
 	digitalWrite(_r_pin2, LOW);
 }

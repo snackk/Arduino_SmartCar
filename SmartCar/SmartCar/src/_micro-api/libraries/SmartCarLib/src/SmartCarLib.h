@@ -16,6 +16,7 @@ public:
 	void handleCar(String data_b);
 private:
 	int _l_pin1, _l_pin2, _l_pwm_pin, _r_pin1, _r_pin2, _r_pwm_pin;
+	int _speed = 255;
 
 	enum state_t {
 		forward,
