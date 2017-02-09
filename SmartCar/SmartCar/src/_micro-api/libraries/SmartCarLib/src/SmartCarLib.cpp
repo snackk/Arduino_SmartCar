@@ -28,7 +28,9 @@ SmartCar::SmartCar(int l_pin1, int l_pin2, int l_pwm_pin, int r_pin1, int r_pin2
 }
 
 void SmartCar::handleCar(String data_b) {
-
+	/*DEBUG ONLY
+	Speed not working properly
+	*/
 	if (data_b.charAt(0) == 'S') {
 		char sp[5], data[3];
 		strcpy(sp, data_b.c_str());
