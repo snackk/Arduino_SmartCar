@@ -1,6 +1,8 @@
-# Arduino_SmartCar
-Arduino library for a 4WD SmartCar using L298N.
+# Arduino SmartCar 
 
+## Overview
+
+Arduino library for a 4WD SmartCar using L298N.
 
 This library allows an Arduino board to control a 4WD car with a L298N chipset connected to the motors. 
 
@@ -56,5 +58,6 @@ Based on this schematic, the code is:
   
   You can check an example of this library being use over bluetooth by a Windows interface: https://github.com/snackk/Arduino_BSmartCar/blob/master/BSmartCar/BSmartCar/BSmartCar.ino
   
-Written by Diogo Santos.
+  Written by [@snackk](https://github.com/snackk)
+
 
