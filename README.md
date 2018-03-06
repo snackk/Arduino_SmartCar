@@ -1,5 +1,5 @@
 # Arduino_SmartCar
-4WD Smart Car library for the Arduino.
+Arduino library for a 4WD SmartCar using L298N.
 
 
 This library allows an Arduino board to control a 4WD car with a L298N chipset connected to the motors. 
