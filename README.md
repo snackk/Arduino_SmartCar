@@ -2,23 +2,31 @@
 
 ## Overview
 
-Arduino library for a 4WD SmartCar using L298N.
+An Arduino library that provides an API to control 4 independent motors. In my particular case I used this library to build a 4 wheel drive car.
 
 This library allows an Arduino board to control a 4WD car with a L298N chipset connected to the motors. 
 
-To use, first download the library, you can find it here: https://www.dropbox.com/s/egcmf6bxqnzrnn1/SmartCarLib_1.0.0.zip?dl=0
+## Prerequisites
 
-Next, you should install the library, you can either do it manually or automatically.
+Firstly, this library must be installed in the Arduino IDE, to do so download the library, you can find it here: https://www.dropbox.com/s/egcmf6bxqnzrnn1/SmartCarLib_1.0.0.zip?dl=0
 
-Then restart the Arduino software if necessary, and SmartCarLib should be available under the libraries dropdown.
+Next, you should unzip the file and place it under Arduino libraries, you can find it here:
+```sh
+$ cd Documents/Arduino/libraries
+$ # or simply
+$ cd ~/Arduino/libraries
+```
+Afterwards restart your Arduino IDE. Once that's done, SmartCarLib should now be available under the libraries dropdown.
 
-Usage is pretty straightforward, first you need to connect the motors to the L298N, like so:
+## Usage
+
+Usage is pretty straightforward, first you need to follow the bellow schematic, that show how to wire the motor to the L298N chipset:
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/9936714/73316953-7361b980-422c-11ea-946d-71c960e32a36.png" alt="schematic app" width=600>
 </p>
 
-Based on this schematic, the code is:
+A code example based on the above schematic:
 ```c
   #include <SmartCarLib.h>
     
@@ -56,7 +64,6 @@ Based on this schematic, the code is:
   }
 
   ```
-  In the above example the car will go forward for 2sec, stop by 1sec, and then repeat it.
   
   You can check an example of this library being use over bluetooth by a Windows interface: https://github.com/snackk/Arduino_BSmartCar/blob/master/BSmartCar/BSmartCar/BSmartCar.ino
   
