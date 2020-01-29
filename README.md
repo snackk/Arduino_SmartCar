@@ -14,7 +14,9 @@ Then restart the Arduino software if necessary, and SmartCarLib should be availa
 
 Usage is pretty straightforward, first you need to connect the motors to the L298N, like so:
 
-![alt tag](https://www.dropbox.com/s/ajhv19hcuea3n10/SmartCar_bb.png?dl=1)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/9936714/73316953-7361b980-422c-11ea-946d-71c960e32a36.png" alt="schematic app" width=600>
+</p>
 
 Based on this schematic, the code is:
 ```c
